@@ -13,4 +13,8 @@
 
 #### Linear Search
 
-    In linear search the array order is doesn't matter. The time complexity is O(n);
+    In linear search the array order is doesn't matter. The time complexity is O(n).
+
+#### Binary Search
+
+    In binary search when the size of array is increased by twice, the steps are only increasing by one. The time complexity is O(log n).
