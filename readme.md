@@ -113,6 +113,143 @@
 
 ### Sorting
 
-#### Bubble Sort
+#### Selection Sort
+
+    Selection Sort is a type of sorting algorithm. A sorting algorithm is a method for reorganizing a large number of items into a specific order, such as alphabetical, highest-to-lowest value or shortest-to-longest distance.
+
+##### How it works?
+
+    Iterate over the unsorted array, keeping track of the minimum value as you go.
+
+    When you get to the end of the array, you know which element is the minimum.
+
+    Swap the minimum element and the first element in the unsorted array.
+
+    The first element is now considered sorted.
+
+    Repeat until the rest of the array is sorted.
+
+![alt text](https://miro.medium.com/max/270/1*2a0cRzZpoN7e7vS0sE8_rw.gif)
+
+    Regarding Time Complexity in Selection Sort, the best and worst case are the same. No matter what, selection sort has a time complexity of O(N²).
+
+    And what about Space Complexity in selection sort, it only requires 1 extra temporary variable. O(1)
+
+##### Insertion Sort
+
+    Insertion sort is a sorting algorithm, which sorts the array by shifting the elements one at at time. It iterates the input elements by growing the sorted array at each iteration. It compares the current element with the largest value in the sorted array. If the current element is greater, then it leaves the element in its place and moves on to the next element else it finds its correct position in the sorted array and moves it to that position. This is done by shifting all the elements, which are larger than the current element, in the sorted array to one position ahead
+
+##### How it works?
+
+    If it is the first element, it is already sorted.
+
+    Pick the next element.
+
+    Compare with all the elements in sorted sub-list.
+
+    Shift all the the elements in sorted sub-list that is greater than the value to be sorted.
+
+    Insert the value.
+
+    Repeat until list is sorted.
+
+![alt text](https://miro.medium.com/max/700/1*_NOe6jL9veyR4yAyf85dzA.png)
+
+##### Important characteristics of insertion sort
+
+    It is efficient for smaller data sets, but very inefficient for larger lists.
+
+    Insertion Sort is adaptive, that means it reduces its total number of steps if given a partially sorted list, hence it increases its efficiency.
+
+    Its space complexity is less. Insertion sort requires a single additional memory space.
+
+    Overall time complexity of Insertion sort is O(n2).
+
+###### Merge Sort
+
+    Merge Sort is a divide and conquer algorithm. It works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. So Merge Sort first divides the array into equal halves and then combines them in a sorted manner.
+
+###### How it works?
+
+    If it is only one element in the list it is already sorted, return.
+
+    Divide the list recursively into two halves until it can no more be divided.
+
+    Merge the smaller lists into new list in sorted order.
+
+![alt text](https://miro.medium.com/max/1200/1*nawdz45vLGeyD9zge_PpWA.jpeg)
+![alt text](https://miro.medium.com/max/700/1*aJ1YiME33o0dBZTCmid7iw.png)
+
+##### Important characteristics of merge sort
+
+    Merge Sort is useful for sorting linked lists.
+
+    Merge Sort is a stable sort which means that the same element in an array maintain their original positions with respect to each other.
+
+    Overall time complexity of Merge sort is O(nLogn). It is more efficient as it is in worst case also the runtime is O(nlogn)
+
+    The space complexity of Merge sort is O(n). This means that this algorithm takes a lot of space and may slower down operations for the last data sets.
+
+###### Quick Sort
+
+    Quick Sort is a divide and conquer algorithm. It creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and then recursively sort the sub arrays. There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array.
+
+###### How it works?
+
+    Find a “pivot” item in the array. This item is the basis for comparison for a single round.
+
+    Start a pointer (the left pointer) at the first item in the array.
+
+    Start a pointer (the right pointer) at the last item in the array.
+
+    While the value at the left pointer in the array is less than the pivot value, move the left pointer to the right (add 1). Continue until the value at the left pointer is greater than or equal to the pivot value.
+
+    While the value at the right pointer in the array is greater than the pivot value, move the right pointer to the left (subtract 1). Continue until the value at the right pointer is less than or equal to the pivot value.
+
+    If the left pointer is less than or equal to the right pointer, then swap the values at these locations in the array.
+
+    Move the left pointer to the right by one and the right pointer to the left by one.
+
+    If the left pointer and right pointer don’t meet, go to step 1.
+
+![alt text](https://miro.medium.com/max/600/1*DtH6fEdBhoUGnjBWudJ8pA.png)
+
+##### Important characteristics of quick sort
+
+    Quick Sort is useful for sorting arrays.
+
+    In efficient implementations Quick Sort is not a stable sort, meaning that the relative order of equal sort items is not preserved.
+
+    Overall time complexity of Quick Sort is O(nLogn). In the worst case, it makes O(n2) comparisons, though this behavior is rare.
+
+    The space complexity of Quick Sort is O(nLogn). It is an in-place sort (i.e. it doesn’t require any extra storage)
+
+##### Bubble Sort
 
     Bubble sort is the simplest technique in which we compare every element with its adjacent element and swap the elements if they are not in order. This way at the end of every iteration (called a pass), the heaviest element gets bubbled up at the end of the list.
+
+    Bubble Sort is based on the idea of repeatedly comparing pairs of adjacent elements and then swapping their positions if they exist in the wrong order.
+
+###### How it works?
+
+    In an unsorted array of 5 elements, start with the first two elements and sort them in ascending order. (Compare the element to check which one is greater).
+
+    Compare the second and third element to check which one is greater, and sort them in ascending order.
+
+    Compare the third and fourth element to check which one is greater, and sort them in ascending order.
+
+    Compare the fourth and fifth element to check which one is greater, and sort them in ascending order.
+
+    Repeat steps 1–5 until no more swaps are required.
+
+![alt text](https://miro.medium.com/max/388/1*7QsZkfrRGhAu5yxxeDdzsA.png)
+
+##### Important characteristics of bubble sort
+
+    Large values are always sorted first.
+
+    It only takes one iteration to detect that a collection is already sorted.
+
+    The best time complexity for Bubble Sort is O(n). The average and worst time complexity is O(n²).
+
+    The space complexity for Bubble Sort is O(1), because only single additional memory space is required.
