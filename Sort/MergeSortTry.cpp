@@ -6,7 +6,7 @@ void merge(int arr[], int left, int mid, int right)
     int i = left;
     int j = mid + 1;
     int k = left;
-    int temp[10];
+    int temp[6];
 
     while (i <= mid && j <= right)
     {
@@ -57,9 +57,11 @@ void mergeSort(int arr[], int left, int right)
 
 int main()
 {
-    int arr[10] = {4, 1, 9, 6, 8, 2, 5, 3, 7, 10};
-    mergeSort(arr, 0, 9);
-    for (int i = 0; i < 10; i++)
+
+    int arr[6] = {4, 1, 8, 2, 7, 10};
+    mergeSort(arr, 0, 5);
+
+    for (int i = 0; i < 6; i++)
     {
         cout << arr[i] << ", ";
     }
