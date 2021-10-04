@@ -7,7 +7,7 @@ void SelectionSort(int arr[])
 {
     for (int i = 0; i < 5; i++)
     {
-        int min = i;
+        int min = i; //* index of minimum value
 
         for (int j = i + 1; j < 5; j++)
         {

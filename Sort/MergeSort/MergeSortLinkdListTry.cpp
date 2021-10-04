@@ -9,6 +9,30 @@ struct node
 
 node *head = NULL;
 
+node *merge(node *a, node *b)
+{
+    if (a == NULL)
+        return b;
+
+    if (b == NULL)
+        return a;
+
+    node *temp = NULL;
+
+    if (a->data < b->data)
+    {
+        temp = a;
+        merge(a->link, b);
+    }
+    else
+    {
+        temp = b;
+        merge(a, b->link);
+    }
+
+    return temp;
+}
+
 node *getMidPoint(node *head)
 {
     node *slow = head;
@@ -23,19 +47,37 @@ node *getMidPoint(node *head)
     return slow;
 }
 
+node *mergeSort(node *head)
+{
+    //* Base Case
+    if (head == NULL || head->link == NULL)
+    {
+        return head;
+    }
+
+    node *mid = getMidPoint(head);
+
+    node *a = head;
+    node *b = mid->link;
+    mid->link = NULL;
+
+    a = mergeSort(a);
+    b = mergeSort(b);
+
+    return merge(a, b);
+}
+
 void Append(int data)
 {
-    struct node *temp = new node();
+    node *temp = new node();
     temp->data = data;
     temp->link = NULL;
 
     if (head == NULL)
-    {
         head = temp;
-    }
+
     else
     {
-
         node *slider = head;
         while (slider->link != NULL)
         {
@@ -50,7 +92,7 @@ void Show()
 {
     if (head == NULL)
     {
-        cout << "List is empty.";
+        cout << "Linked List is Empty.\n";
     }
     else
     {
@@ -65,13 +107,15 @@ void Show()
 
 int main()
 {
-    Append(1);
-    Append(5);
-    Append(3);
-    Append(7);
-    Append(10);
     Show();
-    cout << "\n"
-         << getMidPoint(head)->data;
+    Append(4);
+    Append(2);
+    Append(1);
+    Append(10);
+    Append(5);
+    Show();
+    mergeSort(head);
+    cout << "\nAfter sorting\n";
+    Show();
     return 0;
 }
